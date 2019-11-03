@@ -1,8 +1,3 @@
-# sha-256 hash for "hash": d04b98f48e8f8bcc15c6ae5ac050801cd6dcfd428fb5f9e65c4e16e7807340fa
-# md5 hash for "Falcon400" 992367bdab801250a468be37e1026a6ee89189f9
-# md5 hash for "hi": 49f68a5c8493ec2c0bf489821c21fc3b
-# md5 hash for "hash": 2609a2251e2a1a934a99539ba54d6e55
-
 import pycracka
 import time
 from termcolor import colored, cprint
@@ -19,6 +14,7 @@ char_know = ""
 chars = ""
 min_length = ""
 max_length = ""
+combos = ""
 
 print(colored("Welcome to Pycracka", "blue", attrs=['bold', 'underline', 'blink']))
 cprint("")
@@ -84,15 +80,15 @@ wait(0.5)
 print(colored("Please pick the number corresponding to your hash type", "blue"))
 wait(0.5)
 print(colored("1. MD-5", "green"))
-time.sleep(0.5)
+time.sleep(0.25)
 print(colored("2. SHA-1", "green"))
-time.sleep(0.5)
+time.sleep(0.25)
 print(colored("3. SHA-224", "green"))
-time.sleep(0.5)
+time.sleep(0.25)
 print(colored("4. SHA-256", "green"))
-time.sleep(0.5)
+time.sleep(0.25)
 print(colored("5. SHA-384", "green"))
-time.sleep(0.5)
+time.sleep(0.25)
 print(colored("6. SHA-512", "green"))
 wait(0.5)
 # Selector for hash types
@@ -112,15 +108,19 @@ elif selection == 5:
 elif selection == 6:
     algo = pycracka.get_algorithm("sha512")
 
-# tries combinations
-r = pycracka.bruteforce(hash_, charset, min_length, max_length, algo, False)
+#debug mode on or off
+cprint("Do you want to show all attempts? It will make the program about 20x slower.", "red")
+combos = input()
+if combos == "yes" or combos == "Yes" or combos == "YES" or combos == "ye" or combos == "Ye" or combos == "ya" or combos == "Ya":
+    r = pycracka.bruteforce(hash_, charset, min_length, max_length, algo, True)
+else:
+    r = pycracka.bruteforce(hash_, charset, min_length, max_length, algo, False)
 # cannot find hash
 if r is None:
     print("No matches.")
 # finds hash
 else:
     print("Hash: ", colored(hash_, "grey"))
-    print(colored("Match:", "white"), colored(r, "yellow"))
+    print("Match:", "white", colored(r, "yellow", attrs=["bold"]))
 print("")
-cprint("Thanks For Using", "red", attrs=["bold"])
-
+cprint("Thanks For Using", "green", attrs=["bold"])
