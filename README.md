@@ -2,7 +2,7 @@
 # Made By Alex Haug
 - Please credit me if using for anything besides private use
 - I am not liable for anything you do with this software.
-- I am new to coding so any suggestions/optimizations apreciatted.
+- I am new to coding so any suggestions/optimizations appreciated.
 
 # hashgenerator.py 
 - creates a hash for any input. It does not do salt.
