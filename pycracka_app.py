@@ -2,12 +2,12 @@ import pycracka
 import time
 from termcolor import colored, cprint
 
-
+# wait function
 def wait(amount):
     time.sleep(amount)
     print()
 
-
+#definitions
 hash_ = ""
 charset = ""
 char_know = ""
@@ -16,6 +16,7 @@ min_length = ""
 max_length = ""
 combos = ""
 
+#startup
 print(colored("Welcome to Pycracka", "blue", attrs=['bold', 'underline', 'blink']))
 cprint("")
 print(colored("v1.0", "blue", attrs=['bold', 'underline', 'blink']))
@@ -25,6 +26,7 @@ cprint("Made By Alex Haug", "yellow", attrs=['bold', 'underline', 'blink'])
 cprint('')
 cprint("Press Enter to begin", "red")
 input()
+
 # Hash input
 cprint("Please Enter Your Hash", "cyan")
 hash_ = input()
@@ -108,7 +110,7 @@ elif selection == 5:
 elif selection == 6:
     algo = pycracka.get_algorithm("sha512")
 
-#debug mode on or off
+#show attempts mode on or off
 cprint("Do you want to show all attempts? It will make the program about 20x slower.", "red")
 combos = input()
 if combos == "yes" or combos == "Yes" or combos == "YES" or combos == "ye" or combos == "Ye" or combos == "ya" or combos == "Ya":
