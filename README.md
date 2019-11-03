@@ -16,7 +16,7 @@
 
 # Pycracka.py
 - it is the engine that powers pycracka_app.py
-- cannot be in the same directory as pycracka_app.py
+- imported to pycracka_app.py as a module
 
 # Pycracka_app.py
 - This is the thing you actually run.
