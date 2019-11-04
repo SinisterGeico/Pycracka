@@ -116,8 +116,9 @@ combos = input()
 if combos == "yes" or combos == "Yes" or combos == "YES" or combos == "ye" or combos == "Ye" or combos == "ya" or combos == "Ya":
     r = pycracka.bruteforce(hash_, charset, min_length, max_length, algo, True)
 else:
+    cprint("Calculating. Please wait.", "green")
     r = pycracka.bruteforce(hash_, charset, min_length, max_length, algo, False)
-cprint("Calculating. Please wait.", "green")
+
 # cannot find hash
 if r is None:
     print("No matches.")
