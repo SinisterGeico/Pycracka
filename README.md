@@ -4,7 +4,7 @@
 - I am not liable for anything you do with this software.
 - I am new to coding so any suggestions/optimizations appreciated.
 
-# hashgenerator.py 
+# HashGen.py 
 - creates a hash for any input. It does not do salt.
 - Creates hashes in:
 - MD-5
@@ -20,7 +20,7 @@
 
 # Pycracka_app.py
 - This is the thing you actually run.
-- Capable of cracking all hashes that hashgenerator.py can create
+- Capable of cracking all hashes that HashGen.py can create
 - uses a very simple bruteforce algorithm to iterate through all combinations of a given character set/sets. 
 - supports uppercase, lowercase, and digits
 - DOES NOT SUPPORT SALT
