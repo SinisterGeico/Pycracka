@@ -2,12 +2,14 @@ import pycracka
 import time
 from termcolor import colored, cprint
 
+
 # wait function
 def wait(amount):
     time.sleep(amount)
     print()
 
-#definitions
+
+# definitions
 hash_ = ""
 charset = ""
 char_know = ""
@@ -16,7 +18,7 @@ min_length = ""
 max_length = ""
 combos = ""
 
-#startup
+# startup
 print(colored("Welcome to Pycracka", "blue", attrs=['bold', 'underline', 'blink']))
 cprint("")
 print(colored("v1.0", "blue", attrs=['bold', 'underline', 'blink']))
@@ -110,7 +112,7 @@ elif selection == 5:
 elif selection == 6:
     algo = pycracka.get_algorithm("sha512")
 
-#show attempts mode on or off
+# show attempts mode on or off
 cprint("Do you want to show all attempts? It will make the program about 20x slower.", "red")
 combos = input()
 if combos == "yes" or combos == "Yes" or combos == "YES" or combos == "ye" or combos == "Ye" or combos == "ya" or combos == "Ya":
@@ -125,6 +127,6 @@ if r is None:
 # finds hash
 else:
     print("Hash: ", colored(hash_, "grey"))
-    print("Match:", "white", colored(r, "yellow", attrs=["bold"]))
+    print("Match:", colored(r, "yellow", attrs=["bold"]))
 print("")
 cprint("Thanks For Using", "green", attrs=["bold"])
